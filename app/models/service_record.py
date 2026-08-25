@@ -1,4 +1,5 @@
 from datetime import date
+from typing import Optional
 from uuid import UUID
 
 from sqlmodel import Field
@@ -14,3 +15,5 @@ class ServiceRecord(UUIDBase, table=True):
     service_type: str
     odometer_at_service: float
     service_date: date
+    notes: Optional[str] = Field(default=None)
+    cost: Optional[float] = Field(default=None)
